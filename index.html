@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover hair accessories, press-on nails, beads, charms and keychains with OLA FINDS.">
+  <title>OLA FINDS | Discover Your Obsession</title>
+  <style>
+    :root {
+      --burgundy: #70283b;
+      --gold: #c5a46d;
+      --ivory: #fbf8f3;
+      --ink: #30272a;
+      --muted: #786d70;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--ivory);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    header {
+      padding: 20px 6%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid #e9dfd8;
+      background: var(--ivory);
+    }
+    .logo {
+      color: var(--burgundy);
+      font-family: Georgia, serif;
+      font-weight: bold;
+      font-size: 26px;
+      letter-spacing: 3px;
+      text-decoration: none;
+    }
+    nav { display: flex; flex-wrap: wrap; gap: 18px; }
+    nav a { font-size: 13px; text-decoration: none; }
+    nav a:hover { color: var(--burgundy); }
+    .hero {
+      padding: 82px 7%;
+      text-align: center;
+      background: linear-gradient(135deg, #f0e4df, #fbf8f3 60%, #e7e9e1);
+    }
+    .eyebrow {
+      color: var(--burgundy);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-size: 11px;
+      font-weight: bold;
+    }
+    h1 {
+      margin: 12px 0;
+      color: var(--burgundy);
+      font: normal clamp(38px, 7vw, 68px)/1.1 Georgia, serif;
+    }
+    .hero p { max-width: 570px; margin: 18px auto 26px; color: #5e5053; }
+    .button {
+      display: inline-block;
+      padding: 13px 24px;
+      border-radius: 3px;
+      background: var(--burgundy);
+      color: white;
+      text-decoration: none;
+      font-size: 13px;
+      letter-spacing: .5px;
+    }
+    .button:hover { background: #501a2a; }
+    section { padding: 56px 7%; }
+    .section-heading { text-align: center; margin-bottom: 30px; }
+    h2 { color: var(--burgundy); font: normal 32px Georgia, serif; margin: 0 0 8px; }
+    .section-heading p { color: var(--muted); margin: 0; font-size: 14px; }
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+    .category {
+      padding: 28px 12px;
+      text-align: center;
+      border: 1px solid #e8dcd5;
+      border-radius: 6px;
+      text-decoration: none;
+      background: #fffdfa;
+      transition: transform .2s;
+    }
+    .category:hover { transform: translateY(-4px); }
+    .category .emoji { display: block; font-size: 35px; margin-bottom: 10px; }
+    .category strong { color: var(--burgundy); font-family: Georgia, serif; font-size: 18px; }
+    .category small { display: block; color: var(--muted); margin-top: 7px; }
+    .finds { background: #f0e8e2; }
+    .find-card {
+      max-width: 680px;
+      margin: auto;
+      padding: 30px;
+      border-radius: 6px;
+      background: #fffdfa;
+      text-align: center;
+    }
+    .find-card p { color: var(--muted); }
+    .note { font-size: 12px; color: var(--muted); }
+    .about { max-width: 760px; margin: auto; text-align: center; }
+    footer {
+      padding: 32px 7%;
+      text-align: center;
+      background: #38232a;
+      color: #f8eee7;
+      font-size: 12px;
+    }
+    footer a { color: #e7cc9d; }
+    @media (max-width: 650px) {
+      header { flex-direction: column; }
+      nav { justify-content: center; gap: 12px; }
+      .hero { padding: 60px 6%; }
+      .categories { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      section { padding: 42px 6%; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a class="logo" href="#">OLA FINDS</a>
+    <nav aria-label="Main navigation">
+      <a href="#categories">Categories</a>
+      <a href="#finds">Shop My Finds</a>
+      <a href="#about">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Explore · Discover · Save</div>
+      <h1>Discover Your<br>Obsession.</h1>
+      <p>Your next little favorite is waiting. Explore hair accessories, press-on nails, colorful charms and more curated finds.</p>
+      <a class="button" href="#categories">EXPLORE OUR FINDS</a>
+    </section>
+
+    <section id="categories">
+      <div class="section-heading">
+        <h2>Find Your Obsession</h2>
+        <p>A little something for every style, mood and creative idea.</p>
+      </div>
+      <div class="categories">
+        <a class="category" href="#finds">
+          <span class="emoji">🎀</span>
+          <strong>Hair Accessories</strong>
+          <small>Clips, scrunchies & more</small>
+        </a>
+        <a class="category" href="#finds">
+          <span class="emoji">💅</span>
+          <strong>Press-On Nails</strong>
+          <small>Color your mood</small>
+        </a>
+        <a class="category" href="#finds">
+          <span class="emoji">💎</span>
+          <strong>Beads & Charms</strong>
+          <small>Make it your own</small>
+        </a>
+        <a class="category" href="#finds">
+          <span class="emoji">🔑</span>
+          <strong>Keychains</strong>
+          <small>Small details, big joy</small>
+        </a>
+      </div>
+    </section>
+
+    <section class="finds" id="finds">
+      <div class="section-heading">
+        <h2>Shop My Finds</h2>
+        <p>Discover products worth a closer look.</p>
+      </div>
+      <div class="find-card">
+        <span style="font-size:38px">🛍️</span>
+        <h3>Your next favorite could be here.</h3>
+        <p>We're curating our first collection of finds. Check back soon!</p>
+        <p class="note">Product links will be added here as the collection grows.</p>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about">
+        <h2>A Little About OLA FINDS</h2>
+        <p>OLA FINDS is your place to explore accessories, creative details and fun product discoveries. From everyday hair essentials to expressive nails and colorful charms, there's always something new to discover.</p>
+        <p><strong>Explore · Discover · Save.</strong></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p><strong>OLA FINDS</strong> · Discover Your Obsession</p>
+    <p>Some links on this website may be affiliate links. We may earn a commission from qualifying purchases at no extra cost to you.</p>
+    <p>Amazon Associate disclosure: As an Amazon Associate I earn from qualifying purchases.</p>
+    <p>Follow us on Instagram & TikTok: <a href="https://www.instagram.com/hello.olafinds/" target="_blank" rel="noopener noreferrer">@hello.olafinds</a></p>
+    <p>© 2026 OLA FINDS</p>
+  </footer>
+</body>
+</html>
