@@ -2,285 +2,657 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Discover your obsession with OLA FINDS — curated hair accessories, press-on nails, beads, charms and keychains.">
-<title>OLA FINDS | Discover Your Obsession</title>
-<style>
-:root {
-  --burgundy: #70283b;
-  --gold: #c5a46d;
-  --ivory: #fbf8f3;
-  --blush: #f0e3df;
-  --ink: #30272a;
-  --muted: #786d70;
-}
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  color: var(--ink);
-  background: var(--ivory);
-  line-height: 1.6;
-}
-a { color: inherit; text-decoration: none; }
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 18px 7%;
-  background: rgba(251,248,243,.96);
-  border-bottom: 1px solid #e9dfd8;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-  backdrop-filter: blur(12px);
-}
-.logo {
-  color: var(--burgundy);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 27px;
-  font-weight: bold;
-  letter-spacing: 3px;
-  white-space: nowrap;
-}
-.logo span { color: var(--gold); }
-nav { display: flex; gap: 24px; font-size: 13px; }
-nav a:hover { color: var(--burgundy); }
-.hero {
-  min-height: 490px;
-  padding: 95px 7% 85px;
-  text-align: center;
-  background:
-    radial-gradient(ellipse at 15% 15%, #f0e3df 0, transparent 42%),
-    radial-gradient(ellipse at 85% 80%, #eee5d4 0, transparent 40%),
-    var(--ivory);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-}
-.eyebrow {
-  color: var(--burgundy);
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  font-size: 11px;
-  animation: fadeUp .8s both;
-}
-.hero h1 {
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(43px, 7vw, 76px);
-  font-weight: normal;
-  line-height: 1.08;
-  margin: 22px 0 14px;
-  color: var(--burgundy);
-  animation: fadeUp .9s .1s both;
-}
-.hero h1 em { color: var(--gold); font-weight: normal; }
-.hero p {
-  max-width: 540px;
-  color: var(--muted);
-  animation: fadeUp .9s .2s both;
-}
-.button {
-  display: inline-block;
-  margin-top: 22px;
-  padding: 13px 27px;
-  border: 1px solid var(--burgundy);
-  background: var(--burgundy);
-  color: white;
-  font-size: 12px;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  transition: transform .25s, background .25s, box-shadow .25s;
-  animation: fadeUp .9s .3s both;
-}
-.button:hover {
-  transform: translateY(-3px);
-  background: #54202e;
-  box-shadow: 0 8px 20px #70283b26;
-}
-.section { padding: 70px 7%; }
-.section-heading { text-align: center; margin-bottom: 35px; }
-.section-heading small {
-  color: var(--gold);
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  font-size: 10px;
-}
-.section-heading h2 {
-  font: normal clamp(30px, 4vw, 43px) Georgia, "Times New Roman", serif;
-  color: var(--burgundy);
-  margin: 8px 0;
-}
-.section-heading p { color: var(--muted); font-size: 14px; }
-.categories {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-}
-.category {
-  min-height: 210px;
-  padding: 26px 16px;
-  background: white;
-  border: 1px solid #eee4de;
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: transform .3s, box-shadow .3s, border-color .3s;
-  opacity: 0;
-  animation: fadeUp .7s ease forwards;
-}
-.category:nth-child(2) { animation-delay: .1s; }
-.category:nth-child(3) { animation-delay: .2s; }
-.category:nth-child(4) { animation-delay: .3s; }
-.category:hover {
-  transform: translateY(-8px);
-  border-color: var(--gold);
-  box-shadow: 0 14px 35px #70283b12;
-}
-.category .symbol { font-size: 36px; margin-bottom: 10px; }
-.category h3 {
-  font: normal 21px Georgia, "Times New Roman", serif;
-  color: var(--burgundy);
-  margin: 0 0 8px;
-}
-.category p { color: var(--muted); font-size: 12px; margin: 0; }
-.shop {
-  text-align: center;
-  background: var(--blush);
-  padding: 65px 7%;
-}
-.shop h2 {
-  color: var(--burgundy);
-  font: normal clamp(30px, 4vw, 42px) Georgia, "Times New Roman", serif;
-}
-.shop p { color: var(--muted); max-width: 500px; margin: auto; }
-.about {
-  max-width: 760px;
-  margin: auto;
-  text-align: center;
-}
-.about p { color: var(--muted); }
-footer {
-  background: #4d202e;
-  color: #f9f1e8;
-  padding: 35px 7%;
-  text-align: center;
-  font-size: 12px;
-}
-footer .logo { color: white; margin-bottom: 10px; display: inline-block; }
-footer .logo span { color: var(--gold); }
-footer p { opacity: .8; }
-footer a { text-decoration: underline; text-underline-offset: 3px; }
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(22px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: .01ms !important;
-    animation-iteration-count: 1 !important;
-    scroll-behavior: auto !important;
-    transition-duration: .01ms !important;
-  }
-}
-@media (max-width: 760px) {
-  header { padding: 15px 5%; flex-wrap: wrap; }
-  .logo { font-size: 23px; }
-  nav { gap: 14px; font-size: 12px; }
-  .hero { min-height: 420px; padding: 75px 6%; }
-  .section { padding: 55px 5%; }
-  .categories { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .category { min-height: 185px; padding: 20px 10px; }
-}
-@media (max-width: 380px) {
-  nav { gap: 9px; }
-  nav a { font-size: 11px; }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Discover your obsession with OLA FINDS. Explore hair accessories, press-on nails, beads, charms, keychains and curated finds.">
+  <meta name="theme-color" content="#70283b">
+  <title>OLA FINDS | Discover Your Obsession</title>
+
+  <style>
+    :root {
+      --burgundy: #70283b;
+      --deep-burgundy: #4d202e;
+      --gold: #c5a46d;
+      --ivory: #fbf8f3;
+      --blush: #f3e3e2;
+      --ink: #30272a;
+      --muted: #786d70;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--ivory);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+      padding: 12px 7%;
+      background: rgba(251, 248, 243, 0.96);
+      border-bottom: 1px solid #e9dfd8;
+      backdrop-filter: blur(12px);
+    }
+
+    .header-logo img {
+      display: block;
+      width: 105px;
+      height: 70px;
+      object-fit: contain;
+      transition: transform 0.3s ease;
+    }
+
+    .header-logo:hover img {
+      transform: scale(1.04);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+    }
+
+    nav a {
+      transition: color 0.25s ease;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .nav-cta {
+      padding: 9px 17px;
+      color: var(--white);
+      background: var(--burgundy);
+      border: 1px solid var(--burgundy);
+      transition: background 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav-cta:hover {
+      background: var(--deep-burgundy);
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .hero {
+      position: relative;
+      isolation: isolate;
+      overflow: hidden;
+      min-height: 550px;
+      padding: 75px 7%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 10% 15%, #f0dcd9 0, transparent 42%),
+        radial-gradient(ellipse at 90% 85%, #eee3cd 0, transparent 40%),
+        var(--ivory);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "✧";
+      position: absolute;
+      z-index: -1;
+      color: var(--gold);
+      opacity: 0.55;
+      font-size: 75px;
+      animation: float 5s ease-in-out infinite;
+    }
+
+    .hero::before {
+      top: 13%;
+      left: 12%;
+    }
+
+    .hero::after {
+      right: 12%;
+      bottom: 12%;
+      animation-delay: 1.5s;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--burgundy);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      animation: fadeUp 0.8s both;
+    }
+
+    .hero h1 {
+      margin: 18px 0;
+      color: var(--burgundy);
+      font: normal clamp(44px, 7vw, 78px)/1.1 Georgia, "Times New Roman", serif;
+      animation: fadeUp 0.9s 0.1s both;
+    }
+
+    .hero h1 em {
+      color: var(--gold);
+      font-weight: normal;
+    }
+
+    .hero p {
+      max-width: 540px;
+      margin: 0 auto;
+      color: var(--muted);
+      font-size: 15px;
+      animation: fadeUp 0.9s 0.2s both;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 27px;
+      padding: 13px 27px;
+      color: var(--white);
+      background: var(--burgundy);
+      border: 1px solid var(--burgundy);
+      font-size: 11px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+      animation: fadeUp 0.9s 0.3s both;
+    }
+
+    .button:hover {
+      transform: translateY(-3px);
+      background: var(--deep-burgundy);
+      box-shadow: 0 10px 25px #70283b20;
+    }
+
+    /* SECTION HEADINGS */
+
+    .section {
+      padding: 75px 7%;
+    }
+
+    .section-heading {
+      margin-bottom: 38px;
+      text-align: center;
+    }
+
+    .section-heading small {
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      margin: 8px 0;
+      color: var(--burgundy);
+      font: normal clamp(30px, 4vw, 44px)/1.25 Georgia, "Times New Roman", serif;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    /* CATEGORIES */
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .category {
+      min-height: 225px;
+      padding: 27px 17px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: var(--white);
+      border: 1px solid #eee4de;
+      opacity: 0;
+      animation: fadeUp 0.7s ease forwards;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .category:nth-child(2) {
+      animation-delay: 0.12s;
+    }
+
+    .category:nth-child(3) {
+      animation-delay: 0.24s;
+    }
+
+    .category:nth-child(4) {
+      animation-delay: 0.36s;
+    }
+
+    .category:hover {
+      transform: translateY(-8px);
+      border-color: var(--gold);
+      box-shadow: 0 14px 35px #70283b12;
+    }
+
+    .category-icon {
+      width: 66px;
+      height: 66px;
+      margin-bottom: 13px;
+      display: grid;
+      place-items: center;
+      color: var(--burgundy);
+      background: var(--ivory);
+      border: 1px solid #eee2d3;
+      border-radius: 50%;
+      font-size: 29px;
+      transition: transform 0.3s ease, background 0.3s ease;
+    }
+
+    .category:hover .category-icon {
+      transform: rotate(-8deg) scale(1.08);
+      background: var(--blush);
+    }
+
+    .category h3 {
+      margin: 0 0 7px;
+      color: var(--burgundy);
+      font: normal 21px Georgia, "Times New Roman", serif;
+    }
+
+    .category p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .category-link {
+      margin-top: 14px;
+      color: var(--burgundy);
+      font-size: 11px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* FEATURED FINDS */
+
+    .shop {
+      padding: 75px 7%;
+      text-align: center;
+      background:
+        radial-gradient(ellipse at 90% 10%, #ffffff65, transparent 45%),
+        var(--blush);
+    }
+
+    .shop-content {
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .shop p {
+      color: var(--muted);
+    }
+
+    .shop-note {
+      margin: 25px auto 0;
+      padding: 22px;
+      max-width: 480px;
+      background: #ffffffa6;
+      border: 1px solid #ffffff;
+      font-size: 13px;
+    }
+
+    /* ABOUT */
+
+    .about {
+      max-width: 760px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .about p {
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .about .signature {
+      margin-top: 25px;
+      color: var(--gold);
+      font: italic 24px Georgia, "Times New Roman", serif;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 42px 7% 25px;
+      color: #f9f1e8;
+      background: var(--deep-burgundy);
+      text-align: center;
+    }
+
+    .footer-logo img {
+      display: block;
+      width: 125px;
+      height: 115px;
+      margin: 0 auto 8px;
+      object-fit: contain;
+      border-radius: 50%;
+    }
+
+    footer p {
+      margin: 8px 0;
+      font-size: 12px;
+      opacity: 0.88;
+    }
+
+    footer a:not(.footer-logo) {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-tagline {
+      color: #e7c98e;
+      letter-spacing: 2px;
+    }
+
+    .disclosure {
+      max-width: 600px;
+      margin: 22px auto 0 !important;
+      font-size: 11px;
+    }
+
+    .copyright {
+      margin-top: 25px !important;
+      padding-top: 18px;
+      border-top: 1px solid #ffffff25;
+    }
+
+    /* ANIMATIONS */
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0) rotate(0);
+      }
+      50% {
+        transform: translateY(-12px) rotate(10deg);
+      }
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 850px) {
+      .categories {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      header {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+
+      nav {
+        gap: 15px;
+      }
+
+      .section,
+      .shop {
+        padding-right: 5%;
+        padding-left: 5%;
+      }
+    }
+
+    @media (max-width: 520px) {
+      header {
+        gap: 10px;
+      }
+
+      .header-logo img {
+        width: 75px;
+        height: 58px;
+      }
+
+      nav {
+        gap: 10px;
+        font-size: 11px;
+      }
+
+      .nav-cta {
+        padding: 7px 9px;
+      }
+
+      .hero {
+        min-height: 450px;
+        padding: 65px 6%;
+      }
+
+      .hero::before {
+        left: 4%;
+        font-size: 48px;
+      }
+
+      .hero::after {
+        right: 4%;
+        font-size: 48px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .section,
+      .shop {
+        padding-top: 55px;
+        padding-bottom: 55px;
+      }
+
+      .categories {
+        gap: 12px;
+      }
+
+      .category {
+        min-height: 200px;
+        padding: 20px 10px;
+      }
+
+      .category h3 {
+        font-size: 18px;
+      }
+
+      .category-icon {
+        width: 56px;
+        height: 56px;
+        font-size: 25px;
+      }
+
+      .footer-logo img {
+        width: 105px;
+        height: 100px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<header>
-  <a class="logo" href="#" aria-label="OLA FINDS home">OLA <span>FINDS</span></a>
-  <nav aria-label="Main navigation">
-    <a href="#categories">Discover</a>
-    <a href="#shop">My Finds</a>
-    <a href="#about">About</a>
-  </nav>
-</header>
+  <header>
+    <a class="header-logo" href="#" aria-label="OLA FINDS home">
+      <img src="ola-finds-logo.png" alt="OLA FINDS — Discover Your Obsession">
+    </a>
 
-<main>
-  <section class="hero">
-    <div class="eyebrow">A little something you'll love</div>
-    <h1>Discover Your<br><em>Obsession.</em></h1>
-    <p>Your next favorite find starts here. Explore accessories, nail looks, creative charms and little things that make your style yours.</p>
-    <a class="button" href="#categories">Explore the collections</a>
-  </section>
+    <nav aria-label="Main navigation">
+      <a href="#categories">Discover</a>
+      <a href="#shop">My Finds</a>
+      <a href="#about">Our Story</a>
+      <a class="nav-cta" href="https://www.instagram.com/hello.olafinds/" target="_blank" rel="noopener noreferrer">Follow Us</a>
+    </nav>
+  </header>
 
-  <section class="section" id="categories">
-    <div class="section-heading">
-      <small>Curated just for you</small>
-      <h2>Find Your Obsession</h2>
-      <p>Little details. Big personality. Something for every mood.</p>
-    </div>
-    <div class="categories">
-      <a class="category" href="#shop">
-        <div class="symbol" aria-hidden="true">🎀</div>
-        <h3>Hair Accessories</h3>
-        <p>Clips, scrunchies & everyday favorites</p>
-      </a>
-      <a class="category" href="#shop">
-        <div class="symbol" aria-hidden="true">💅</div>
-        <h3>Press-On Nails</h3>
-        <p>Fresh looks at your fingertips</p>
-      </a>
-      <a class="category" href="#shop">
-        <div class="symbol" aria-hidden="true">💎</div>
-        <h3>Beads & Charms</h3>
-        <p>Colorful details to create your own</p>
-      </a>
-      <a class="category" href="#shop">
-        <div class="symbol" aria-hidden="true">♡</div>
-        <h3>Keychains</h3>
-        <p>Small accessories with personality</p>
-      </a>
-    </div>
-  </section>
+  <main>
+    <section class="hero">
+      <div class="hero-content">
+        <div class="eyebrow">Welcome to OLA FINDS</div>
 
-  <section class="shop" id="shop">
-    <div class="section-heading">
-      <small>Handpicked discoveries</small>
-      <h2>Shop My Finds</h2>
-    </div>
-    <p>We're gathering lovely finds for you. Check back as our curated collection grows.</p>
-    <a class="button" href="https://www.instagram.com/hello.olafinds/" target="_blank" rel="noopener noreferrer">Follow on Instagram</a>
-  </section>
+        <h1>Discover Your<br><em>Obsession.</em></h1>
 
-  <section class="section" id="about">
-    <div class="about">
-      <div class="section-heading">
-        <small>A note from OLA FINDS</small>
-        <h2>Explore. Discover. Save.</h2>
+        <p>
+          Your next favorite find starts here. Explore beautiful accessories,
+          nail looks, creative charms and little things that make your style yours.
+        </p>
+
+        <a class="button" href="#categories">Explore the Collections</a>
       </div>
-      <p>OLA FINDS is your little corner for discovering accessories, creative details and everyday favorites worth a closer look. We're here to help you find something that feels like you.</p>
-    </div>
-  </section>
-</main>
+    </section>
 
-<footer>
-  <a class="logo" href="#">OLA <span>FINDS</span></a>
-  <p>Discover Your Obsession</p>
-  <p><a href="https://www.instagram.com/hello.olafinds/" target="_blank" rel="noopener noreferrer">Instagram @hello.olafinds</a></p>
-  <p>As an Amazon Associate I earn from qualifying purchases.</p>
-  <p>© 2026 OLA FINDS. Explore • Discover • Save.</p>
-</footer>
+    <section class="section" id="categories">
+      <div class="section-heading">
+        <small>Curated just for you</small>
+        <h2>Find Your Obsession</h2>
+        <p>Little details. Big personality. Something for every mood.</p>
+      </div>
+
+      <div class="categories">
+        <a class="category" href="#shop">
+          <div class="category-icon" aria-hidden="true">🎀</div>
+          <h3>Hair Accessories</h3>
+          <p>Clips, scrunchies and everyday favorites.</p>
+          <span class="category-link">Explore →</span>
+        </a>
+
+        <a class="category" href="#shop">
+          <div class="category-icon" aria-hidden="true">💅</div>
+          <h3>Press-On Nails</h3>
+          <p>Fresh looks at your fingertips.</p>
+          <span class="category-link">Explore →</span>
+        </a>
+
+        <a class="category" href="#shop">
+          <div class="category-icon" aria-hidden="true">💎</div>
+          <h3>Beads & Charms</h3>
+          <p>Colorful details to create your own.</p>
+          <span class="category-link">Explore →</span>
+        </a>
+
+        <a class="category" href="#shop">
+          <div class="category-icon" aria-hidden="true">♡</div>
+          <h3>Keychains</h3>
+          <p>Small accessories with personality.</p>
+          <span class="category-link">Explore →</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="shop" id="shop">
+      <div class="shop-content">
+        <div class="section-heading">
+          <small>Handpicked discoveries</small>
+          <h2>Shop My Finds</h2>
+          <p>Good finds. Lovely details. Your next obsession.</p>
+        </div>
+
+        <div class="shop-note">
+          <strong>Something lovely is coming.</strong>
+          <br>
+          We're curating our first collection of favorite finds.
+          Check back soon for product recommendations and shopping links.
+        </div>
+
+        <a class="button" href="https://www.instagram.com/hello.olafinds/" target="_blank" rel="noopener noreferrer">Discover Us on Instagram</a>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="about">
+        <div class="section-heading">
+          <small>A little about us</small>
+          <h2>Your Style. Your Finds.</h2>
+        </div>
+
+        <p>
+          OLA FINDS is your little corner for discovering accessories,
+          creative details and everyday favorites worth a closer look.
+          From hair accessories to press-on nails and fun little charms,
+          we're here to help you find something that feels like you.
+        </p>
+
+        <div class="signature">Explore • Discover • Save</div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <a class="footer-logo" href="#" aria-label="OLA FINDS home">
+      <img src="ola-finds-logo.png" alt="OLA FINDS — Discover Your Obsession">
+    </a>
+
+    <p class="footer-tagline">DISCOVER YOUR OBSESSION</p>
+
+    <p>
+      <a href="https://www.instagram.com/hello.olafinds/" target="_blank" rel="noopener noreferrer">
+        Instagram @hello.olafinds
+      </a>
+    </p>
+
+    <p class="disclosure">
+      As an Amazon Associate I earn from qualifying purchases.
+      Affiliate links will be clearly identified when products are added.
+    </p>
+
+    <p class="copyright">© 2026 OLA FINDS. Explore • Discover • Save.</p>
+  </footer>
 
 </body>
 </html>
